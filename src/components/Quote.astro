@@ -1,0 +1,15 @@
+---
+const API_URL = "https://zenquotes.io/api/today";
+const response = await fetch(API_URL);
+const data = await response.json();
+const quote = data[0]?.q ?? "Quote not available.";
+---
+
+<div class="bg-primary py-8">
+  <div class="flex w-full flex-col">
+    <div class="divider font-bold text-lg mt-0">Today's Quote</div>
+  </div>
+  <blockquote class="text-center text-sm text-base-content/80 italic px-2">
+    {quote}
+  </blockquote>
+</div>
