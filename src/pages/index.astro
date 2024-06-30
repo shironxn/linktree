@@ -4,7 +4,6 @@ import Header from "@components/Header.astro";
 import Card from "@components/Card.astro";
 import type { CardProps, HeaderProps } from "@lib/types";
 import Quote from "@components/Quote.astro";
-import Footer from "@components/Footer.astro";
 
 const header: HeaderProps = {
   avatarURL: "https://avatars.githubusercontent.com/u/97370421?v=4",
@@ -53,7 +52,9 @@ const card: CardProps[] = [
 ---
 
 <Layout title="linktree">
-  <main class="container m-auto bg-base-300 min-h-screen">
+  <main
+    class="container m-auto bg-base-300 min-h-screen flex flex-col justify-center gap-8 py-16"
+  >
     <Header
       avatarURL={header.avatarURL}
       title={header.title}
@@ -61,6 +62,5 @@ const card: CardProps[] = [
     />
     <Quote />
     <Card Cards={card} />
-    <Footer />
   </main>
 </Layout>
